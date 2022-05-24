@@ -4,35 +4,19 @@ public class ProductManager : AbstractProduct, IProduct
     public ProductManager() { }
     public void Add(Product p)
     {
-        //1. extend size of Products
-        if (Size >= Products.Length)
-        {
-            Product[] tmp = new Product[Size*2];
-            for (int i = 0; i < Size; i++)
-            {
-                tmp[i] = Products[i];
-            }
-            Products = tmp; //tham chieu toi mang moi
-        }
-
-        Products[Size++] = p;
-        
+       this.Products.Add(p);
     }
 
     public void Display()
     {
-     for(int i = 0; i < this.Size; i++)
+        foreach (var item in this.Products)
         {
-            Console.WriteLine(Products[i]);
-        }   
+            Console.WriteLine(item);
+        } 
     }
 
     public Product Get(int pos)
     {
-        if(pos < 0||pos >= Size)
-        {
-            return null;
-        }
         return this.Products[pos];
     }
 

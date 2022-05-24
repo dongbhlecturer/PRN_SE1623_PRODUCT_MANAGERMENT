@@ -25,5 +25,4 @@ public class Product
 
     public override string? ToString() => $"[Id = {Id}, Product Name = {ProductName}, Desc = {Desc}, Category ID = {CategoryID}, Unit Price = {UnitPrice}]";
 
- 
 }
